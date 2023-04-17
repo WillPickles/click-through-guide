@@ -5,17 +5,20 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import DiagPage2 from '../../pages/diag/Diagpage2';
+import DiagPage3 from '../../pages/diag/Diagpage3';
+import ChooseNTE from '../../pages/diag/ChooseNTE';
 
 const steps = ['Select NTE', 'NTE Diagnostics', 'Select Router', 'Router Diagnostics', 'Next Actions'];
 
 function getStepContent(step: number){
   switch (step) {  
     case 0:  
-      return 'Select NTE';  
+      return <ChooseNTE />;  
     case 1:  
-      return 'NTE Diagnostics';  
+      return <DiagPage2 />;  
     case 2:  
-      return 'Select Router'; 
+      return <DiagPage3 />; 
     case 3: 
       return 'Router Diagnostics'; 
     default:  
@@ -70,7 +73,7 @@ export default function Header() {
   };
 
   return (
-    <Box sx={{ width: '60%', margin: 'auto' }}>
+    <Box className="pt-6" sx={{ width: '60%', margin: 'auto' }}>
       <Stepper activeStep={activeStep}>
         {steps.map((label, index) => {
           const stepProps: { completed?: boolean } = {};

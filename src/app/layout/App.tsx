@@ -1,16 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 import { ThemeProvider } from '@emotion/react';
-import { CssBaseline, Container, createTheme } from '@mui/material';
+import { CssBaseline, Container, createTheme, Box } from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import Header from './app/layout/Header';
-
-
+import Header from './Header';
 
 function App() {
   const theme = createTheme({
-    
+    palette: {
+      background: {
+        default: "#e6e6e6"
+      }
+    }
   })
   
   return (
@@ -19,7 +18,6 @@ function App() {
       <Header/>
       <Container>
         <Outlet />
-
       </Container>
     </ThemeProvider>
   );
